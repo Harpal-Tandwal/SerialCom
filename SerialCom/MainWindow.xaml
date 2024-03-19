@@ -1,0 +1,201 @@
+﻿<Window x:Class="SerialCom.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SerialCom"
+        mc:Ignorable="d"
+        Title="SerialCommunication" Height="450" Width="800">
+    <Grid Background="DarkCyan" Width="1000" Height="450">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <!--first column containing communication parameters-->
+            <StackPanel>
+                <Button
+                    Name="btn_refresh_port"
+                   Content="refresh ports"
+                   Width="100"
+                    Margin="0 10 -200 0" Click="Button_Click"/>   
+                <StackPanel Orientation="Horizontal">
+                 
+
+                    <Label Height="40"
+              Width="200"
+              Content="SELECT PORT "
+              FontSize="16"
+              Background="Teal"
+              BorderThickness="4px"
+              Padding="6"
+              VerticalContentAlignment="Center"
+              HorizontalContentAlignment="Center"
+             />
+                    <ComboBox Height="40"
+                              Name="port_cBox"
+                             Width="200"
+                             FontSize="16"
+                            Margin="0 0 0 4" 
+                                 />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Height="40"
+              Width="200"
+              Content="SELECT BAUD RATE "
+              FontSize="16"
+              Background="Teal"
+              BorderThickness="4px"
+              Padding="6"
+              VerticalContentAlignment="Center"
+              HorizontalContentAlignment="Center"
+             />
+                    <ComboBox
+                            Name="baud_rate_cBox"
+                            Height="40"
+                             Width="200"
+                             FontSize="16"
+                             Background="CadetBlue"
+                             BorderThickness="4px"
+                             Padding="6"
+                             VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Center"
+                            Margin="0 0 0 4"
+                 />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Height="40"
+              Width="200"
+              Content="SELECT DATA BIT "
+              FontSize="16"
+              Background="Teal"
+              BorderThickness="4px"
+              Padding="6"
+              VerticalContentAlignment="Center"
+              HorizontalContentAlignment="Center"
+             />
+                    <ComboBox Height="40"
+                               Name="data_bit_cBox"
+                                 Width="200"
+                                 FontSize="16"
+                                 Background="CadetBlue"
+                                 BorderThickness="4px"
+                                 Padding="6"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalContentAlignment="Center"
+                                Margin="0 0 0 4"
+                                     />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Height="40"
+              Width="200"
+              Content="SELECT STOP BIT "
+              FontSize="16"
+              Background="Teal"
+              BorderThickness="4px"
+              Padding="6"
+              VerticalContentAlignment="Center"
+              HorizontalContentAlignment="Center"
+             />
+                    <ComboBox Height="40"
+                               Name="stop_bit_cBox"
+             Width="200"
+             FontSize="16"
+             Background="CadetBlue"
+             BorderThickness="4px"
+             Padding="6"
+             VerticalContentAlignment="Center"
+             HorizontalContentAlignment="Center"
+            Margin="0 0 0 4"
+                 />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Height="40"
+              Width="200"
+              Content="SELECT PARITY BIT "
+              FontSize="16"
+              Background="Teal"
+              BorderThickness="4px"
+              Padding="6"
+              VerticalContentAlignment="Center"
+              HorizontalContentAlignment="Center"
+             />
+                    <ComboBox Height="40"
+                               Name="parity_bit_cBox"
+             Width="200"
+             FontSize="16"
+             Background="CadetBlue"
+             BorderThickness="4px"
+             Padding="6"
+             VerticalContentAlignment="Center"
+             HorizontalContentAlignment="Center"
+            Margin="0 0 0 4"
+                 />
+                </StackPanel>
+
+                <StackPanel Margin="0 50 0 10" Orientation="Horizontal" Width="300">
+                    <Button
+                        Name="btn_open"
+                        Height="30"
+                        Width="150"
+                        Content="Open"
+                        Background="LightGreen" Click="btn_open_Click"
+                        />
+                    <Button
+                        Name="btn_close"
+                        Height="30"
+                        Width="150"
+                        Content="Close"
+                        Background="LightGreen" Click="btn_close_Click"
+                        />
+                </StackPanel>
+                <ProgressBar
+                    Name="progress_br"
+                    Width="200"
+                    Height="18"
+                  
+                    
+                    />
+            </StackPanel>
+            
+            
+            
+        </Grid>
+        <StackPanel Name="Column2"  Grid.Column="1" Background="Turquoise">
+            
+            <TextBox
+               Name="tb_data_send"
+                 Height="180"
+                
+                />
+            <Button
+                Width="100"
+                Height="25"
+                Content="Send"
+                Name="btn_send" Click="btn_send_Click"/>
+
+            <TextBox
+                Margin="0 25 0 0"
+               Name="tb_data_receive"
+                Height="180"
+                Background="Black"
+                Foreground="Green"
+                 TextWrapping="Wrap" 
+                AcceptsReturn="True"
+                />
+            <Button
+                 Width="100"
+                 Height="25"
+                 Content="receive"
+            
+               
+                
+                />
+
+
+        </StackPanel>
+        
+
+    </Grid>
+</Window>
